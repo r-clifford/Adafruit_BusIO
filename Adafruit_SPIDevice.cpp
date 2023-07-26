@@ -54,7 +54,7 @@ Adafruit_SPIDevice::Adafruit_SPIDevice(int8_t cspin, int8_t sckpin,
   _sck = sckpin;
   _miso = misopin;
   _mosi = mosipin;
-
+#undef BUSIO_USE_FAST_PINIO
 #ifdef BUSIO_USE_FAST_PINIO
   csPort = (BusIO_PortReg *)portOutputRegister(digitalPinToPort(cspin));
   csPinMask = digitalPinToBitMask(cspin);
